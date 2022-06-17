@@ -14,6 +14,7 @@ public class PhoneDao {
 	@Autowired
 	private SqlSession sqlSession;
 
+	
 	public int personInsert(PersonVo pVo) {
 		// System.out.println(pVo);
 		int count = sqlSession.insert("phonebook.personInsert", pVo);
