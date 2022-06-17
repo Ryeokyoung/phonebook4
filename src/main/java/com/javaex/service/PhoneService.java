@@ -1,6 +1,8 @@
 package com.javaex.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -8,37 +10,108 @@ import org.springframework.stereotype.Service;
 import com.javaex.dao.PhoneDao;
 import com.javaex.vo.PersonVo;
 
+
 @Service
 public class PhoneService {
 
+	//필드
 	@Autowired
-	private PhoneDao pDao;
-
-	public int personInsert(PersonVo pVo) {
-		int count = -1;
-		count = pDao.personInsert(pVo);
+	private PhoneDao phoneDao;
+	
+	
+	//생성자
+	
+	//메소드 gs
+	
+	//메소드 일반
+	
+	//전화번호 리스트
+	public List<PersonVo> getPersonList(){
+		System.out.println("PhoneService>getPersonList()");
+		
+		List<PersonVo> personList = phoneDao.getPersonList();
+		
+		return personList;
+	}
+	
+	
+	
+	//전화번호 등록
+	public int personInsert(PersonVo personVo) {
+		System.out.println("PhoneService>personInsert()");
+		
+		int count = phoneDao.personInsert(personVo);
+		
 		return count;
 	}
-
-	public int personDelete(int personId) {
-		int count = -1;
-		count = pDao.personDelete(personId);
+	
+	
+	//전화번호 등록(map을 사용하는 가상의 상황: 문법설명) 
+	public int personInsert2() {
+		System.out.println("PhoneService>personInsert2()");
+		
+		//map을 만들어 사용한다*   1회성
+		Map<String, String> pMap = new HashMap<String, String>();
+		pMap.put("name", "황일영");
+		pMap.put("hp", "010-3333-3333");
+		pMap.put("company", "02-3333-3333");
+		
+		int count = phoneDao.personInsert2(pMap);
+	
 		return count;
 	}
-
-	public int personUpdate(PersonVo pVo) {
-		int count = -1;
-		count = pDao.personUpdate(pVo);
+	
+	
+	
+	//전화번호 삭제
+	public int personDelete(int no) {
+		System.out.println("PhoneService>personDelete()");
+		
+		int count = phoneDao.personDelete(no);
+		
 		return count;
 	}
-
-	public List<PersonVo> personSelect() {
-		List<PersonVo> pList = pDao.personSelect();
-		return pList;
+	
+	
+	//전화번호 수정폼(정보가져오기)
+	public PersonVo getPerson(int no) {
+		System.out.println("PhoneService>getPerson()");
+		
+		PersonVo personVo = phoneDao.getPerson(no);
+		
+		return personVo;
 	}
-
-	public PersonVo getPerson(int personId) {
-		PersonVo pVo = pDao.getPerson(personId);
-		return pVo;
+	
+	
+	
+	//전화번호 수정폼2(정보가져오기)
+	public Map<String, Object> getPerson2(int no) {
+		System.out.println("PhoneService>getPerson2()");
+		
+		Map<String, Object> pMap = phoneDao.getPerson2(no);
+		
+		return pMap;
 	}
+	
+	
+	
+	
+	//전화번호 수정
+	public int personUpdate(PersonVo personVo) {
+		System.out.println("PhoneService>personUpdate()");
+		
+		int count = phoneDao.personUpdate(personVo);
+		
+		return count;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+
+	
 }

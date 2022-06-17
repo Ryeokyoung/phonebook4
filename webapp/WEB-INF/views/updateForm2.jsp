@@ -12,10 +12,10 @@
 	<h2>연락처 수정폼</h2>
 	<p>수정화면입니다</p>
 	<form action="./update" method="get">
-		이름(name)<input type="hidden" name="personId" value="${requestScope.pMap.NAME }">
-		핸드폰(hp)<input type="hidden" name="personId" value="${pMap.HP }">
-		회사(company)<input type="hidden" name="personId" value="${pMap.COMPANY }">
-		pk(personId)<input type="hidden" name="personId" value="${pMap.PERSONID }">
+		이름(name)<input type="text" name="name" value="${requestScope.pMap.NAME }">
+		핸드폰(hp)<input type="text" name="hp" value="${pMap.HP }">
+		회사(company)<input type="text" name="company" value="${pMap.COMPANY }">
+		pk(personId)<input type="text" name="personId" value="${pMap.PERSONID }">
 		
 		<button type="submit">수정</button>
 	</form>

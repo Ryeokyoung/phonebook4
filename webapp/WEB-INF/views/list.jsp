@@ -10,28 +10,29 @@
 	<h1>전화번호부</h1>
 	<p>입력한 정보의 내역입니다.</p>
 
-	<c:forEach items="${pList}" var="p" varStatus="status">
+	<c:forEach items="${personList}" var="personVo">
 		<table border="1">
 			<tr>
 				<td>이름(name)</td>
-				<td>${p.name }</td>
+				<td>${personVo.name }</td>
 			</tr>
 			<tr>
 				<td>휴대전화(hp)</td>
-				<td>${p.hp }</td>
+				<td>${personVo.hp }</td>
 			</tr>
 			<tr>
 				<td>회사번호(company)</td>
-				<td>${p.company }</td>
+				<td>${personVo.company }</td>
 			</tr>
 			<tr>
-				<td><a href="./updateForm?personId=${p.personId }">[수정]</a></td>
+				<td><a href="./updateForm?personId=${p.personId }">[수정1]</a></td>
+				<td><a href="./updateForm?personId=${p.personId }">[수정2]</a></td>
 				<td><a href="./delete/${p.personId }">[삭제]</a></td>
 			</tr>
 		</table>
 		<br>
 	</c:forEach>
 
-	<a href="./writeForm">추가번호 등록</a>
+	<a href="./writeForm">번호 등록</a>
 </body>
 </html>

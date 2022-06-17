@@ -14,11 +14,9 @@
 		전화번호 등록할려면<br> 아래 황목을 가입하고 "등록" 버튼을 눌러주세요
 	</p>
 	<form action="/phonebook4/write" method="post">
-		<label for="name">이름(name)</label> <input type="text" id="name"
-			name="name" value=""><br> <label for="hp">전화번호(hp)</label>
-		<input type="text" id="hp" name="hp" value=""><br> <label
-			for="company">회사번호(company)</label> <input type="text" id="company"
-			name="company" value=""><br>
+		이름(name) <input type="text" name="name" value=""><br>
+		핸드폰(hp) <input type="text" name="hp" value=""><br>
+		회사(company) <input type="text" name="company" value=""><br>
 		<button type="submit">등록</button>
 	</form>
 </body>

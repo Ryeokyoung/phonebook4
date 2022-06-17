@@ -10,14 +10,15 @@
 <body>
 	<h1>전화번호부</h1>
 	<h2>연락처 수정폼</h2>
-	<form action="./update" method="post">
-		<input type="hidden" name="personId" value="${pVo.personId }">
-		<label for="name">이름(name)</label> <input type="text" id="name"
-			name="name" value="${pVo.name }"><br> <label for="hp">휴대전화(hp)</label>
-		<input type="text" id="hp" name="hp" value="${pVo.hp }"><br>
-		<label for="company">회사번호(company):</label> <input type="text"
-			id="company" name="company" value="${pVo.company }"><br>
-		<button type="submit">저장</button>
+	<p>수정화면입니다. 아래의 항목을 수정하고 "수정"버튼을 클릭하세요</p>
+
+
+	<form action="./update" method="get">
+		이름(name) <input type="text" name="name" value="${personVo.name}"> <br>
+		핸드폰(hp) <input type="text" name="hp" value="${personVo.hp}"> <br>
+		회사(company) <input type="text" name="company" value="${personVo.company}"> <br>
+		pk(personId) <input type="text" name="personId" value="${personVo.personId}"> <br>
+		<button type="submit">수정</button>
 	</form>
 </body>
 </html>
